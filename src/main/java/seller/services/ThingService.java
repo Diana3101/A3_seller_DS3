@@ -39,7 +39,7 @@ public class ThingService {
 
     @Transactional
     public List<Thing> getThings(){
-        return thingRepository.findAll();
+        return thingRepository.getThingsInStock();
     }
 
     @Transactional

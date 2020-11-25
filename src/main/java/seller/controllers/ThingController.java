@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.*;
 import seller.entities.Storage;
 import seller.entities.Thing;
 import seller.entities.dto.ThingDTO;
+import seller.entities.dto.ThingsDTO;
 import seller.services.StorageService;
 import seller.services.ThingService;
 
@@ -27,8 +28,11 @@ public class ThingController {
     }
 
     @GetMapping
-    public ResponseEntity<List<Thing>> show() {
-        return ResponseEntity.ok(thingService.getThings());
+    public ResponseEntity<ThingsDTO> show() {
+        ThingsDTO thingsDTO = new ThingsDTO();
+        thingsDTO.setThings(thingService.getThings());
+        System.out.println(ResponseEntity.ok(thingsDTO));
+        return ResponseEntity.ok(thingsDTO);
     }
 
     @GetMapping("{id}")

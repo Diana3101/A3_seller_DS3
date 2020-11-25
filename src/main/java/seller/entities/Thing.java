@@ -2,11 +2,15 @@ package seller.entities;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import lombok.Data;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 import javax.persistence.*;
 import java.util.UUID;
 
+@EnableAutoConfiguration
 @Entity
+@Data
 public class Thing {
     @Id
     private UUID id;
@@ -15,7 +19,7 @@ public class Thing {
     private ConditionOfThing condition;
     private double price;
     @JsonBackReference
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne
     @JoinColumn(name = "seller_id")
     private Seller addedBy;
 
@@ -78,5 +82,4 @@ public class Thing {
     public void setAddedBy(Seller addedBy) {
         this.addedBy = addedBy;
     }
-
 }

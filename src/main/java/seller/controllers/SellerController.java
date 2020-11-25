@@ -9,6 +9,7 @@ import org.springframework.web.bind.annotation.*;
 import seller.entities.Seller;
 import seller.entities.Thing;
 import seller.entities.dto.ServeDTO;
+import seller.repo.SellerRepository;
 import seller.services.SellerService;
 import seller.services.ThingService;
 
@@ -20,11 +21,13 @@ import java.util.UUID;
 public class SellerController {
     private final SellerService sellerService;
     private final ThingService thingService;
+    private final SellerRepository sellerRepo;
 
     @Autowired
-    public SellerController(SellerService sellerService, ThingService thingService) {
+    public SellerController(SellerService sellerService, ThingService thingService, SellerRepository sellerRepo) {
         this.sellerService = sellerService;
         this.thingService = thingService;
+        this.sellerRepo = sellerRepo;
     }
 
     @GetMapping
@@ -45,12 +48,14 @@ public class SellerController {
         List<Thing> toStorage = serve.getThings();
         List<Integer> thingQuantities = serve.getThingQuantities();
         Seller jsonSeller = serve.getSeller();
+        sellerRepo.save(jsonSeller);
         Seller seller = sellerService.findSellerByName(jsonSeller.getFirstName(), jsonSeller.getLastName());
         for(Thing th: toStorage){
             th.setAddedBy(seller);
             thingService.addThing(th);
         }
         sellerService.addThingsToStorage(seller, toStorage, thingQuantities);
+
 
         return ResponseEntity.ok().build();
     }

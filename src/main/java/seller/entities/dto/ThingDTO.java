@@ -71,4 +71,16 @@ public class ThingDTO {
     public void setQuantity(int quantity) {
         this.quantity = quantity;
     }
+
+    @Override
+    public String toString() {
+        return "ThingDTO{" +
+                "thingId=" + thingId +
+                ", name='" + name + '\'' +
+                ", size=" + size +
+                ", condition=" + condition +
+                ", price=" + price +
+                ", quantity=" + quantity +
+                '}';
+    }
 }

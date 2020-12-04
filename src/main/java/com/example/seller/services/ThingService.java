@@ -1,11 +1,11 @@
-package seller.services;
+package com.example.seller.services;
 
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import seller.entities.Thing;
-import seller.repo.ThingRepository;
+import com.example.seller.entities.Thing;
+import com.example.seller.repo.ThingRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -25,10 +25,6 @@ public class ThingService {
         return thingRepository.findThingByName(name);
     }
 
-    @Transactional(readOnly = true)
-    public List<Thing> getAllThing() {
-        return thingRepository.getThingsInStock();
-    }
 
     @Transactional
     public void addThing(Thing thing){

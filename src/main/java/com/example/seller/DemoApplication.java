@@ -1,8 +1,6 @@
-package seller;
+package com.example.seller;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
-import seller.entities.Seller;
-import java.util.UUID;
 
 @SpringBootApplication
 public class DemoApplication {

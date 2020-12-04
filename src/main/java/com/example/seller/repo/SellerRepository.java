@@ -1,10 +1,10 @@
-package seller.repo;
+package com.example.seller.repo;
 
 
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.query.Param;
-import seller.entities.Seller;
+import com.example.seller.entities.Seller;
 
 import java.util.UUID;
 

@@ -1,6 +1,5 @@
-package seller.entities;
+package com.example.seller.entities;
 
-import com.fasterxml.jackson.annotation.JsonBackReference;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 

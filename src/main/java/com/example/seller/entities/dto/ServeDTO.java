@@ -1,8 +1,8 @@
-package seller.entities.dto;
+package com.example.seller.entities.dto;
 
 
-import seller.entities.Seller;
-import seller.entities.Thing;
+import com.example.seller.entities.Seller;
+import com.example.seller.entities.Thing;
 
 import java.util.List;
 
@@ -50,7 +50,7 @@ public class ServeDTO {
         return "ServeDTO{" +
                 "things=" + things +
                 ", thingQuantities=" + thingQuantities +
-                ", seller=" + seller +
+                ", com.example.seller=" + seller +
                 '}';
     }
 }

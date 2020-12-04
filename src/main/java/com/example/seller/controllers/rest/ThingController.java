@@ -1,18 +1,17 @@
-package seller.controllers;
+package com.example.seller.controllers.rest;
 
 
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import seller.entities.Storage;
-import seller.entities.Thing;
-import seller.entities.dto.ThingDTO;
-import seller.entities.dto.ThingsDTO;
-import seller.services.StorageService;
-import seller.services.ThingService;
+import com.example.seller.entities.Storage;
+import com.example.seller.entities.Thing;
+import com.example.seller.entities.dto.ThingDTO;
+import com.example.seller.entities.dto.ThingsDTO;
+import com.example.seller.services.StorageService;
+import com.example.seller.services.ThingService;
 
-import java.util.List;
 import java.util.UUID;
 
 @RestController

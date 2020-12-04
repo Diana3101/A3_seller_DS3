@@ -1,9 +1,9 @@
-package seller.config;
+package com.example.seller.config;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import seller.entities.Seller;
-import seller.repo.SellerRepository;
+import com.example.seller.entities.Seller;
+import com.example.seller.repo.SellerRepository;
 import java.util.UUID;
 
 @Configuration

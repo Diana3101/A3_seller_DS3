@@ -1,8 +1,7 @@
-package seller.entities;
+package com.example.seller.entities;
 
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import lombok.Data;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 
 import javax.persistence.*;
@@ -10,13 +9,12 @@ import java.util.UUID;
 
 @EnableAutoConfiguration
 @Entity
-@Data
 public class Thing {
     @Id
     private UUID id;
     private String name;
-    private Size size;
-    private ConditionOfThing condition;
+    private String size;
+    private String condition;
     private double price;
     @JsonBackReference
     @ManyToOne
@@ -27,7 +25,7 @@ public class Thing {
 
     }
 
-    public Thing(String name, Size size, ConditionOfThing condition, double price, Seller addedBy) {
+    public Thing(String name, String size, String condition, double price, Seller addedBy) {
         this.name = name;
         this.size = size;
         this.condition = condition;
@@ -51,19 +49,19 @@ public class Thing {
         this.name = name;
     }
 
-    public Size getSize() {
+    public String getSize() {
         return size;
     }
 
-    public void setSize(Size size) {
+    public void setSize(String size) {
         this.size = size;
     }
 
-    public ConditionOfThing getCondition() {
+    public String getCondition() {
         return condition;
     }
 
-    public void setCondition(ConditionOfThing condition) {
+    public void setCondition(String condition) {
         this.condition = condition;
     }
 

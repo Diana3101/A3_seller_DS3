@@ -1,11 +1,11 @@
-package seller.services;
+package com.example.seller.services;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import seller.entities.Storage;
-import seller.entities.Thing;
-import seller.repo.StorageRepository;
+import com.example.seller.entities.Storage;
+import com.example.seller.entities.Thing;
+import com.example.seller.repo.StorageRepository;
 
 @Service
 public class StorageService {

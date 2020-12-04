@@ -1,14 +1,14 @@
-package seller.services;
+package com.example.seller.services;
 
 import javassist.NotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
-import seller.entities.Seller;
-import seller.entities.Storage;
-import seller.entities.Thing;
-import seller.repo.SellerRepository;
-import seller.repo.StorageRepository;
+import com.example.seller.entities.Seller;
+import com.example.seller.entities.Storage;
+import com.example.seller.entities.Thing;
+import com.example.seller.repo.SellerRepository;
+import com.example.seller.repo.StorageRepository;
 
 import java.util.List;
 import java.util.Optional;
@@ -28,6 +28,11 @@ public class SellerService {
     @Transactional
     public Seller findSellerByName(String firstName, String lastName){
         return sellerRepository.findSellerByName(firstName, lastName);
+    }
+
+    @Transactional
+    public void save(Seller seller){
+        sellerRepository.save(seller);
     }
 
 

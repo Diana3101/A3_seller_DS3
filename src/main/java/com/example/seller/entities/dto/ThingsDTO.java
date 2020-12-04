@@ -1,7 +1,7 @@
-package seller.entities.dto;
+package com.example.seller.entities.dto;
 
 
-import seller.entities.Thing;
+import com.example.seller.entities.Thing;
 
 import java.util.List;
 

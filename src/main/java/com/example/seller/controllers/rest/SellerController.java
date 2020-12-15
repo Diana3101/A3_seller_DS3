@@ -38,7 +38,6 @@ public class SellerController {
         return ResponseEntity.ok(sellerService.getSellerById(id));
     }
 
-
     @PostMapping
     public ResponseEntity<Void> ThingsFromSeller(@RequestBody String serveJson){
         Gson gson = new GsonBuilder().disableHtmlEscaping().create();
@@ -57,4 +56,5 @@ public class SellerController {
 
         return ResponseEntity.ok().build();
     }
+
 }

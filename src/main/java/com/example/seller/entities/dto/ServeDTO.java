@@ -50,7 +50,7 @@ public class ServeDTO {
         return "ServeDTO{" +
                 "things=" + things +
                 ", thingQuantities=" + thingQuantities +
-                ", com.example.seller=" + seller +
+                ", seller=" + seller +
                 '}';
     }
 }
